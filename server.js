@@ -9,7 +9,7 @@ const connectDB = require("./config/db")
 app.use(express.urlencoded({ extended: false }));
 app.use('/mangas', require('./routes/mangaRoutes'))
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 8000, '0.0.0.0', () => {
     console.log("Server started on port 8000")
 })
 
