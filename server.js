@@ -7,6 +7,8 @@ const connectDB = require("./config/db")
  connectDB()  
  app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const cors = require('cors');
+app.use(cors());
 app.use('/mangas', require('./routes/mangaRoutes'))
 
 app.listen(process.env.PORT || 8000, '0.0.0.0', () => {
